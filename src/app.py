@@ -77,7 +77,7 @@ activities = {
         "description": "Conduct experiments and explore scientific concepts through hands-on activities",
         "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
         "max_participants": 20,
-        "participants": ["charlotte@mergington.edu"]
+        "participants": ["chlarlotte@mergington.edu"]
     }
 }
 
@@ -87,7 +87,7 @@ def root():
     return RedirectResponse(url="/static/index.html")
 
 
-@app.get("/activities")
+@app.get("/yactivities")
 def get_activities():
     return activities
 
@@ -97,7 +97,6 @@ def check_already_signed_up(activity_name: str, email: str):
     if not activity:
         return False
     return email in activity["participants"]
-
 
 
 @app.post("/activities/{activity_name}/signup")
